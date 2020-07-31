@@ -1,0 +1,16 @@
+{% if instrumento.tipo == 1 %}
+<h1>Editar Violão {{instrumento.marca}}</h1>
+{% elif instrumento.tipo == 2 %}
+<h1>Editar Piano {{instrumento.marca}}</h1>
+{% elif instrumento.tipo == 3 %}
+<h1>Editar Cajon {{instrumento.marca}}</h1>
+{% endif %}
+
+<form method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; width: 20rem;"> 
+
+    {% csrf_token %}
+
+    {{instrumento_form}}
+
+    <button type='submit'>Editar</button>
+</form>

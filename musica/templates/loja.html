@@ -1,0 +1,30 @@
+<h1>{{loja.nome}}</h1>
+
+<ul style="display: flex;">
+    {% for instrumento in loja.instrumentos.all %} 
+
+    <div style="display: flex; flex-direction: column; margin-right: 2rem; align-items: center; justify-content: center;">
+
+    <a href="{% url 'instrumento-detail' instrumento.id %}" >
+
+        {% if instrumento.tipo == 1 %}
+            <li>Violão {{instrumento.marca}}</li>
+        {% elif instrumento.tipo == 2 %}
+            <li>Piano {{instrumento.marca}}</li>
+        {% elif instrumento.tipo == 3 %}
+            <li>Cajon {{instrumento.marca}}</li>
+        {% endif %}
+
+        <img src='{{instrumento.foto.url}}' height='150rem' width='auto'>
+
+    </a>
+
+    <a href="{% url 'delete-instrumento' instrumento.id %}">Deletar Instrumento</a>
+
+    </div>
+
+    {% endfor %}
+</ul>
+
+    <a href="{% url 'create-instrumento' loja.id %}" style="margin-top: 5rem;">Criar novo Instrumento</a>
+

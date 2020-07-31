@@ -1,0 +1,18 @@
+
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+{% if instrumento.tipo == 1 %}
+<h1>Violão {{instrumento.marca}}</h1>
+{% elif instrumento.tipo == 2 %}
+<h1>Piano {{instrumento.marca}}</h1>
+{% elif instrumento.tipo == 3 %}
+<h1>Cajon {{instrumento.marca}}</h1>
+{% endif %}
+
+<img src="{{instrumento.foto.url}}" height="500rem" width="auto">
+
+<h2><em>Este instrumento pertence à loja {{instrumento.loja}}</em></h2>
+
+<a href="{% url 'edit-instrumento' instrumento.id %}">Editar Instrumento</a>
+
+</div>

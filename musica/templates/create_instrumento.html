@@ -1,0 +1,11 @@
+<h1>Criar Instrumento - {{loja.nome}}</h1>
+
+
+<form method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; width: 20rem;"> 
+
+    {% csrf_token %}
+
+    {{instrumento_form}}
+
+    <button type='submit'>Criar</button>
+</form>
